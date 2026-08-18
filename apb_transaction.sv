@@ -1,21 +1,5 @@
 `timescale 1ns/1ps
-//=====================================================================
-// apb_transaction.sv
-// Transaction item. This replaces the original transactor.sv.
-//
-// Bugs fixed from the original repo's transactor.sv:
-//   1. randc on 32-bit fields (paddr, pwdata) is illegal/unsupported on
-//      most simulators (Questa's randc cyclic engine is limited to
-//      narrow widths, typically <= a few bits, because it must
-//      enumerate every value in the cycle). Switched to plain `rand`
-//      with sensible range constraints instead.
-//   2. pselx was an 8-bit vector with no defined meaning/constraint -
-//      APB has a single select per slave, so it is now a 1-bit "psel".
-//   3. No constructor, no display/copy utility methods.
-//   4. The two derived classes (write/second) added nothing beyond a
-//      single constraint - folded into one class with a `pwrite`
-//      constraint knob instead of an inheritance hierarchy.
-//=====================================================================
+
 class apb_transaction;
 
   // Stimulus (randomized)
@@ -37,13 +21,7 @@ class apb_transaction;
     inject_error dist { 1 := 1, 0 := 9 };
   }
 
-  // Keep addresses word-aligned. Legal transactions stay inside the
-  // DUT's memory range (MEM_DEPTH = 64 words -> byte addresses
-  // 0 .. 252); error-injected transactions are pushed outside it.
-  // The corner weighting on the legal branch biases the randomizer
-  // toward address-space boundaries (0x00 and 0xFC) in addition to
-  // the general spread, which is the actual point of constrained
-  // *random* verification: hit the corners often, not just uniformly.
+  // Keep addresses word-aligned. 
   constraint c_addr_range {
     paddr[1:0] == 2'b00;
     if (inject_error) {
