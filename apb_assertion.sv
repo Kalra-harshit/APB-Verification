@@ -1,10 +1,5 @@
 `timescale 1ns/1ps
-//=====================================================================
-// apb_assertions.sv
-// Protocol checker for the AMBA APB bus. Bound into every apb_if
-// instance automatically (see the `bind` at the bottom), so it
-// watches the bus regardless of which testbench drives it.
-//=====================================================================
+
 module apb_assertions (
   input logic        pclk,
   input logic        preset_n,
