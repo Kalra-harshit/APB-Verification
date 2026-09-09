@@ -31,15 +31,16 @@ The physical signal timing, including successful memory-mapped data writes/reads
 ### 3. Assertion & Protocol Checking
 The SVA suite ran concurrently with the data-driven tests. All 9 properties successfully passed with zero failure counts, mathematically verifying APB protocol compliance.
 
-<img width="1190" height="446" alt="assertion" src="https://github.com/user-attachments/assets/c34e1e30-3e5b-4934-8268-16deb519e3a9" />
+<img width="936" height="414" alt="new_Ass" src="https://github.com/user-attachments/assets/e7df372b-ce54-46b9-ade6-daf70bae490b" />
+
 
 ### 4. Functional & Code Coverage
 Coverage metrics were heavily prioritized to ensure complete testing of the RTL logic, ensuring all predefined corner cases (like back-to-back writes and invalid addresses) were hit.
 
-<img width="1232" height="318" alt="functional coverage" src="https://github.com/user-attachments/assets/52c8673c-d4db-4065-80b2-bca1bad5c65d" />
+<img width="938" height="804" alt="bins" src="https://github.com/user-attachments/assets/c22a4702-e3d2-495d-bbfa-202ed30a4ac3" />
 
 
-<img width="1024" height="370" alt="code coverage" src="https://github.com/user-attachments/assets/9bb7cf4d-1979-49dc-aefd-7c8a9ea974e1" />
+
 
 
 ---
