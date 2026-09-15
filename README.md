@@ -34,7 +34,7 @@ The SVA suite ran concurrently with the data-driven tests. All 9 properties succ
 <img width="936" height="414" alt="new_Ass" src="https://github.com/user-attachments/assets/e7df372b-ce54-46b9-ade6-daf70bae490b" />
 
 
-### 4. Functional & Code Coverage
+### 4. Functional Coverage
 Coverage metrics were heavily prioritized to ensure complete testing of the RTL logic, ensuring all predefined corner cases (like back-to-back writes and invalid addresses) were hit.
 
 <img width="938" height="804" alt="bins" src="https://github.com/user-attachments/assets/c22a4702-e3d2-495d-bbfa-202ed30a4ac3" />
