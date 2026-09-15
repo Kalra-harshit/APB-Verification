@@ -9,7 +9,7 @@ All simulations, assertions, and coverage reports were executed using **QuestaSi
 The verification environment is built on a robust, class-based SystemVerilog architecture featuring a complete Generator-Driver-Monitor-Scoreboard pipeline. 
 
 * **Constrained-Random Testing:** Achieved 80/80 passing read/write transactions via automated test vector generation.
-* **SystemVerilog Assertions (SVA):** Developed a 9-property SVA suite to continuously monitor APB handshake timing (e.g., `PSEL` to `PENABLE` transitions), signal stability, and the legality of the `PSLVERR` response.
+* **SystemVerilog Assertions (SVA):** Developed a 8-property SVA suite to continuously monitor APB handshake timing (e.g., `PSEL` to `PENABLE` transitions), signal stability, and the legality of the `PSLVERR` response.
 * **Error-Injection Constraints:** Purposefully drove invalid-address corner cases to validate the Device Under Test's (DUT) error handling and edge-case reliability.
 * **Coverage-Driven Verification:** Reached a 100% functional coverage goal across targeted covergroups.
 
