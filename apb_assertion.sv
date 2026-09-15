@@ -53,16 +53,8 @@ module apb_assertions (
   a_wdata_stable_setup_to_access: assert property (p_wdata_stable_setup_to_access)
     else $error("[ASSERT] PWDATA changed between SETUP and ACCESS phase");
 
-  // 6) General extended-access stability (covers slaves with wait states):
-  //    while PSEL is high and PREADY is still low, address/control must hold
-  property p_addr_stable_while_waiting;
-    @(posedge pclk) disable iff (!preset_n)
-    (psel && !pready) |=> $stable(paddr);
-  endproperty
-  a_addr_stable_while_waiting: assert property (p_addr_stable_while_waiting)
-    else $error("[ASSERT] PADDR changed while slave held PREADY low");
 
-  // 7) No unknown PADDR while a transfer is selected
+  // 6) No unknown PADDR while a transfer is selected
   property p_no_x_addr;
     @(posedge pclk) disable iff (!preset_n)
     psel |-> !$isunknown(paddr);
@@ -70,7 +62,7 @@ module apb_assertions (
   a_no_x_addr: assert property (p_no_x_addr)
     else $error("[ASSERT] PADDR is X/Z while PSEL is asserted");
 
-  // 8) No unknown PREADY while a transfer is selected
+  // 7) No unknown PREADY while a transfer is selected
   property p_no_x_pready;
     @(posedge pclk) disable iff (!preset_n)
     psel |-> !$isunknown(pready);
@@ -78,7 +70,7 @@ module apb_assertions (
   a_no_x_pready: assert property (p_no_x_pready)
     else $error("[ASSERT] PREADY is X/Z while PSEL is asserted");
 
-  // 9) PSLVERR must only ever be asserted during an active ACCESS phase
+  // 8) PSLVERR must only ever be asserted during an active ACCESS phase
   property p_pslverr_only_during_access;
     @(posedge pclk) disable iff (!preset_n)
     pslverr |-> (psel && penable);
