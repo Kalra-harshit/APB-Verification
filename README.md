@@ -29,7 +29,7 @@ The physical signal timing, including successful memory-mapped data writes/reads
 
 
 ### 3. Assertion & Protocol Checking
-The SVA suite ran concurrently with the data-driven tests. All 9 properties successfully passed with zero failure counts, mathematically verifying APB protocol compliance.
+The SVA suite ran concurrently with the data-driven tests. All 8 properties successfully passed with zero failure counts, mathematically verifying APB protocol compliance.
 
 <img width="936" height="414" alt="new_Ass" src="https://github.com/user-attachments/assets/e7df372b-ce54-46b9-ade6-daf70bae490b" />
 
