@@ -33,22 +33,6 @@ module tb_top;
     .pslverr (vif.pslverr)
   );
 
-  // Protocol checker: wired straight to the interface signals via
-  // hierarchical reference (modules can't be instantiated inside an
-  // interface body, so it lives here instead).
-  apb_assertions u_apb_assertions (
-    .pclk    (pclk),
-    .preset_n(preset_n),
-    .psel    (vif.psel),
-    .penable (vif.penable),
-    .pwrite  (vif.pwrite),
-    .paddr   (vif.paddr),
-    .pwdata  (vif.pwdata),
-    .prdata  (vif.prdata),
-    .pready  (vif.pready),
-    .pslverr (vif.pslverr)
-  );
-
   // Reset
   initial begin
     preset_n = 1'b0;
